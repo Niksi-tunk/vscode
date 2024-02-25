@@ -92,7 +92,7 @@ class NiksiPanel {
   }
 
   public launchProject(name: string) {
-    cp.exec(`code --remote wsl+nixos '/mnt/c/Users/\$ENV:UserName/niksi/${name}'"`)
+    cp.exec(`code --remote wsl+nixos '/mnt/c/Users/\$ENV:UserName/niksi/${name}'`, {"shell": "powershell.exe"})
   }
 
   public dispose() {
