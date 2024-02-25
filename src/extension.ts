@@ -82,6 +82,7 @@ class NiksiPanel {
         switch (message.command) {
           case 'alert':
             vscode.window.showErrorMessage(message.text);
+            this.launchProject(message.text);
             return;
         }
       },
