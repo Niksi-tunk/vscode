@@ -6,6 +6,6 @@ const vscode = acquireVsCodeApi();
 function buttonHandler(project) {
     vscode.postMessage({
         command: 'alert',
-        text: project + ' chosen'
+        text: project,
     });
 }

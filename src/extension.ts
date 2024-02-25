@@ -81,7 +81,7 @@ class NiksiPanel {
       message => {
         switch (message.command) {
           case 'alert':
-            vscode.window.showInformationMessage(message.text);
+            vscode.window.showInformationMessage(message.text + " chosen");
             this.launchProject(message.text);
             return;
         }
