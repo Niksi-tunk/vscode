@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as cp from "child_process";
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
@@ -87,6 +88,10 @@ class NiksiPanel {
       null,
       this._disposables,
     );
+  }
+
+  public launchProject(name: string) {
+    cp.exec(`code --remote wsl-remote+wsl-nix' /code/${name}'"`)
   }
 
   public dispose() {
