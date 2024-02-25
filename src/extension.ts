@@ -91,7 +91,7 @@ class NiksiPanel {
   }
 
   public launchProject(name: string) {
-    cp.exec(`code --remote wsl-remote+wsl-nix' /code/${name}'"`)
+    cp.exec(`code --remote wsl+nixos '/mnt/c/Users/\$ENV:UserName/niksi/${name}'"`)
   }
 
   public dispose() {
