@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import * as cp from "child_process";
+import * as fs from "fs";
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
@@ -109,7 +110,7 @@ class NiksiPanel {
   }
 
   private _getProjects() {
-    return ["o1", "p2", "c", "rust", "torimies"];
+    return fs.readdirSync(`${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi`);
   }
 
   private _update() {
