@@ -16,7 +16,11 @@
 			{
 				"command": "niksi.start",
 				"title": "Start a new session with Niksi",
-				"category": "Niksi"
+				"category": "Niksi",
+				"icon": {
+                    "light": "icon.png",
+                    "dark": "icon.png"
+                }
 			}
 		]
 	},
