@@ -12,6 +12,24 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+			  {
+				"id": "niksi",
+				"title": "Niksi",
+				"icon": "icon.png"
+			  }
+			]
+		  },
+		"views": {
+			"niksi": [
+			  {
+				"type": "webview",
+				"id": "calicoColors.colorsView",
+				"name": "Niksi"
+			  }
+			]
+		  },
 		"commands": [
 			{
 				"command": "niksi.start",
