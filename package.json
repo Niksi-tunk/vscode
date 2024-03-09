@@ -21,6 +21,12 @@
           }
         ]
       },
+      "viewsWelcome": [
+        {
+          "view": "niksiWelcome",
+          "contents": "Jotain tekstiä\n[Avaa niksi](command:niksi.start)Jotain tekstiä\n[Avaa niksi](command:niksi.start)\nJotain tekstiä\n[Avaa niksi](command:niksi.start)\nJotain tekstiä\n[Avaa niksi](command:niksi.start)\n"
+        }
+      ],
       "views": {
         "niksi": [
           {
