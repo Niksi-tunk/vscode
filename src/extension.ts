@@ -180,7 +180,7 @@ function getNonce() {
 
 class NiksiViewProvider implements vscode.WebviewViewProvider {
 
-	public static readonly viewType = 'calicoColors.colorsView';  //se ei toimi muulla nimellä?? :D
+	public static readonly viewType = 'nikis.webview';
 
 	private _view?: vscode.WebviewView;
 
@@ -210,5 +210,5 @@ class NiksiViewProvider implements vscode.WebviewViewProvider {
           </html>
       `;
 	}
-  
+
 }
