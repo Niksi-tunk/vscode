@@ -180,7 +180,7 @@ function getNonce() {
 
 class NiksiViewProvider implements vscode.WebviewViewProvider {
 
-	public static readonly viewType = 'nikis.webview';
+	public static readonly viewType = 'niksi.webview';
 
 	private _view?: vscode.WebviewView;
 
