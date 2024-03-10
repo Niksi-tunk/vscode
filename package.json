@@ -23,15 +23,15 @@
       },
       "viewsWelcome": [
         {
-          "view": "niksiWelcome",
-          "contents": "Jotain tekstiä\n[Avaa niksi](command:niksi.start)Jotain tekstiä\n[Avaa niksi](command:niksi.start)\nJotain tekstiä\n[Avaa niksi](command:niksi.start)\nJotain tekstiä\n[Avaa niksi](command:niksi.start)\n"
+          "view": "niksi.emptyView",
+          "contents": "[Avaa niksi](command:niksi.start)"
         }
       ],
       "views": {
         "niksi": [
           {
-            "type": "webview",
-            "id": "niksi.webview",
+            "type": "tree",
+            "id": "niksi.emptyView",
             "name": "Niksi"
           }
         ]
