@@ -24,7 +24,7 @@
     "viewsWelcome": [
       {
         "view": "niksi.emptyView",
-        "contents": "[Create new](command:niksi.new)\n[Open existing project](command:niksi.open)\n[Open Aalto course](niksi.aalto)\n[Import from git](niksi.import)\n"
+        "contents": "[Create new](command:niksi.new)\n[Open existing project](command:niksi.open)\n[Open Aalto course](command:niksi.aalto)\n[Import from git](command:niksi.import)\n"
       }
     ],
     "views": {
