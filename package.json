@@ -39,7 +39,7 @@
     "commands": [
       {
         "command": "niksi.new",
-        "title": "Creat a new Niksi project",
+        "title": "Create a new Niksi project",
         "category": "Niksi",
         "icon": {
           "light": "icon.png",
