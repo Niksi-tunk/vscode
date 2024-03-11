@@ -32,7 +32,11 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function importFromGit() {
-  vscode.window.showInformationMessage("Would import project")
+  const repo = vscode.window.showInputBox({
+    placeHolder: "Repository URL",
+    prompt: "Import a git repository to Niksi",
+  });
+  vscode.window.showInformationMessage(`Cloning ${repo}`)
 }
 
 function getWebviewOptions(extensionUri: vscode.Uri): vscode.WebviewOptions {
