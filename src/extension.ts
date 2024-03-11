@@ -117,7 +117,7 @@ class NiksiPanel {
   }
 
   public launchProject(name: string) {
-    cp.exec(`code --remote wsl+nixos "/mnt/c/Users/\$ENV:UserName/niksi/${name}"`, {"shell": "powershell.exe"})
+    cp.exec(`code --remote wsl+nixos "/mnt/c/Users/\$ENV:UserName/niksi/${name}"`, { "shell": "powershell.exe" })
   }
 
   public dispose() {
@@ -155,7 +155,7 @@ class NiksiPanel {
 
     const projects = this._getProjects();
 
-    const res = eta.render("./" + page, {stylesheet: stylesheet, script: script, projects: projects});
+    const res = eta.render("./" + page, { stylesheet: stylesheet, script: script, projects: projects });
     return res;
-	}
+  }
 }
