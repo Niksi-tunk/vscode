@@ -10,6 +10,12 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand('niksi.open', () => {
       NiksiPanel.createOrShow(context.extensionUri);
+    }),
+    vscode.commands.registerCommand('niksi.aalto', () => {
+      NiksiPanel.createOrShow(context.extensionUri);
+    }),
+    vscode.commands.registerCommand('niksi.import', () => {
+      importFromGit();
     })
   );
 
@@ -23,6 +29,10 @@ export function activate(context: vscode.ExtensionContext) {
       }
     });
   }
+}
+
+function importFromGit() {
+  vscode.window.showInformationMessage("Would import project")
 }
 
 function getWebviewOptions(extensionUri: vscode.Uri): vscode.WebviewOptions {

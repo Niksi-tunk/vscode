@@ -24,7 +24,7 @@
     "viewsWelcome": [
       {
         "view": "niksi.emptyView",
-        "contents": "[Create new](command:niksi.new)\n[Open existing project](command:niksi.open)\n[Open Aalto course](niksi.aalto)"
+        "contents": "[Create new](command:niksi.new)\n[Open existing project](command:niksi.open)\n[Open Aalto course](niksi.aalto)\n[Import from git](niksi.import)\n"
       }
     ],
     "views": {
@@ -49,6 +49,24 @@
       {
         "command": "niksi.open",
         "title": "Start an existing Niksi project",
+        "category": "Niksi",
+        "icon": {
+          "light": "icon.png",
+          "dark": "icon.png"
+        }
+      },
+      {
+        "command": "niksi.aalto",
+        "title": "Import an Aalto University course",
+        "category": "Niksi",
+        "icon": {
+          "light": "icon.png",
+          "dark": "icon.png"
+        }
+      },
+      {
+        "command": "niksi.import",
+        "title": "Import a nix flake from a git repository",
         "category": "Niksi",
         "icon": {
           "light": "icon.png",
