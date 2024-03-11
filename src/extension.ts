@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand('niksi.new', () => {
       NiksiPanel.createOrShow(context.extensionUri);
-    })
+    }),
     vscode.commands.registerCommand('niksi.open', () => {
       NiksiPanel.createOrShow(context.extensionUri);
     })
