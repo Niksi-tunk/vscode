@@ -135,7 +135,7 @@ class NiksiPanel {
     const stylesheet = webview.asWebviewUri(stylesheetOnDisk)
 
     const templatePath = vscode.Uri.joinPath(this._extensionUri, 'media');
-    const eta = new Eta({ views: templatePath.path })
+    const eta = new Eta({ views: templatePath.fsPath })
 
     const res = eta.render("./new", {stylesheet: stylesheet, script: script});
     return res;
