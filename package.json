@@ -24,7 +24,7 @@
     "viewsWelcome": [
       {
         "view": "niksi.emptyView",
-        "contents": "[Create new](command:niksi.new)\n[Open existing project](command:niksi.start)\n[Open Aalto course](niksi.aalto)"
+        "contents": "[Create new](command:niksi.new)\n[Open existing project](command:niksi.open)\n[Open Aalto course](niksi.aalto)"
       }
     ],
     "views": {
@@ -38,8 +38,17 @@
     },
     "commands": [
       {
-        "command": "niksi.start",
-        "title": "Start a new session with Niksi",
+        "command": "niksi.new",
+        "title": "Creat a new Niksi project",
+        "category": "Niksi",
+        "icon": {
+          "light": "icon.png",
+          "dark": "icon.png"
+        }
+      },
+      {
+        "command": "niksi.open",
+        "title": "Start an existing Niksi project",
         "category": "Niksi",
         "icon": {
           "light": "icon.png",
