@@ -5,7 +5,19 @@ const vscode = acquireVsCodeApi();
 
 function buttonHandler(project) {
     vscode.postMessage({
-        command: 'alert',
+        command: 'select',
         text: project,
+    });
+}
+
+function createNew() {
+    const data = {
+        template: document.getElementById("template").value,
+        name: document.getElementById("name").value
+    }
+
+    vscode.postMessage({
+        command: 'create',
+        text: JSON.stringify(data)
     });
 }

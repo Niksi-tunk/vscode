@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import * as cp from "child_process";
 import * as fs from "fs";
+import { Eta } from "eta"
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
@@ -81,9 +82,13 @@ class NiksiPanel {
     this._panel.webview.onDidReceiveMessage(
       message => {
         switch (message.command) {
-          case 'alert':
+          case 'select':
             vscode.window.showInformationMessage(message.text + " chosen");
             this.launchProject(message.text);
+            return;
+          case 'create':
+            vscode.window.showInformationMessage("Would create project")
+            // this.createProject(JSON.parse(message.text))
             return;
         }
       },
@@ -121,51 +126,15 @@ class NiksiPanel {
 
   private _getHtmlForWebview(webview: vscode.Webview, projects: string[]) {
     const scriptPathOnDisk = vscode.Uri.joinPath(this._extensionUri, 'media', 'main.js');
-    const scriptUri = webview.asWebviewUri(scriptPathOnDisk);
+    const script = webview.asWebviewUri(scriptPathOnDisk);
 
-    const styleResetPath = vscode.Uri.joinPath(this._extensionUri, 'media', 'reset.css');
-    const stylePathMainPath = vscode.Uri.joinPath(this._extensionUri, 'media', 'vscode.css');
+    const stylesheetOnDisk = vscode.Uri.joinPath(this._extensionUri, 'media', 'styles.css');
+    const stylesheet = webview.asWebviewUri(stylesheetOnDisk)
 
-    const stylesResetUri = webview.asWebviewUri(styleResetPath);
-    const stylesMainUri = webview.asWebviewUri(stylePathMainPath);
+    const templatePath = vscode.Uri.joinPath(this._extensionUri, 'media');
+    const eta = new Eta({ views: templatePath.path })
 
-    const nonce = getNonce();
-
-    const buttons = projects.map(p =>
-      `<button onClick=buttonHandler('${p}') type="button">
-         ${p}</button>`
-    ).join('\n')
-
-		return `<!DOCTYPE html>
-			<html lang="en">
-			<head>
-				<meta charset="UTF-8">
-
-				<!--
-					Use a content security policy to only allow loading images from https or from our extension directory,
-					and only allow scripts that have a specific nonce.
-				-->
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-				<!--<link href="${stylesResetUri}" rel="stylesheet">
-				<link href="${stylesMainUri}" rel="stylesheet">-->
-
-				<title>Cat Coding</title>
-			</head>
-			<body>
-        ${buttons}
-
-				<script nonce="${nonce}" src="${scriptUri}"></script>
-			</body>
-			</html>`;
+    const res = eta.render("./new", {stylesheet: stylesheet, script: script});
+    return res;
 	}
-}
-
-function getNonce() {
-  let text = '';
-  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  for (let i = 0; i < 32; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
 }

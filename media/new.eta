@@ -1,0 +1,21 @@
+<% layout("./layout.eta") %>
+
+<form onSubmit="return false;">
+    <label for="template">Choose template:</label>
+    <select name="template" id="template">
+        <option value="scala3">Scala 3</option>
+        <option value="rust">Rust</option>
+        <option value="python">Python</option>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+        <option value="haskell">Haskell</option>
+        <option value="idris2">Idris 2</option>
+        <option value="node">Node.js</option>
+        <option value="none">Empty template</option>
+    </select>
+
+    <label for="name">Project name:</label>
+    <input type="text" id="name" />
+
+    <input onClick="createNew()" type="submit" id="submit" value="Create" />
+</form>
