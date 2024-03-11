@@ -31,8 +31,8 @@ export function activate(context: vscode.ExtensionContext) {
   }
 }
 
-function importFromGit() {
-  const repo = vscode.window.showInputBox({
+async function importFromGit() {
+  const repo = await vscode.window.showInputBox({
     placeHolder: "Repository URL",
     prompt: "Import a git repository to Niksi",
   });
