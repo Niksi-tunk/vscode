@@ -76,11 +76,11 @@ class NiksiPanel {
     const panel = NiksiPanel.currentPanel
       ? NiksiPanel.currentPanel._panel
       : vscode.window.createWebviewPanel(
-      NiksiPanel.viewType,
-      'Niksi',
-      column || vscode.ViewColumn.One,
-      getWebviewOptions(extensionUri),
-    );
+        NiksiPanel.viewType,
+        'Niksi',
+        column || vscode.ViewColumn.One,
+        getWebviewOptions(extensionUri),
+      );
 
     NiksiPanel.currentPanel = new NiksiPanel(panel, extensionUri, page);
   }
@@ -145,8 +145,9 @@ class NiksiPanel {
   }
 
   private _getProjects() {
-    //return fs.readdirSync(`${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi`);
-    return ["test1", "test2"]
+    if (process.platform == "win32") {
+      return fs.readdirSync(`${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi`)
+    } else { return ["test1", "test2"] }
   }
 
   private _update() {
