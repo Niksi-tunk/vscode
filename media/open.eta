@@ -1,5 +1,7 @@
+<% layout("./layout.eta") %>
+
 <% it.projects.forEach(p => { %>
-    <button onClick=buttonHandler("<%~ p %>") type="button">
+    <button onClick=buttonHandler('<%~ p %>') type="button">
         <%= p %>
     </button>
 <% }) %>
