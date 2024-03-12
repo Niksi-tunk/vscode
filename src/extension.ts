@@ -160,7 +160,7 @@ class NiksiPanel {
 
   private _getProjects(dir: string = projectDir) {
     if (process.platform == "win32") {
-      return fs.readdirSync(`${dir}\\niksi`)
+      return fs.readdirSync(dir)
     } else {
       // For testing only
       return ["test1", "test2"]
