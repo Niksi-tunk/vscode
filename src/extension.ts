@@ -39,11 +39,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 async function importFromGit(repo: string, targetName: string | undefined, ungit: boolean) {
   vscode.window.showInformationMessage(`Cloning ${repo}`)
-  cp.exec(`git clone ${repo} C:\\Users\\$ENV:UserName\\niksi\\${targetName ? targetName : ""}`, { "shell": "powershell.exe" })
+  cp.execSync(`git clone ${repo} C:\\Users\\$ENV:UserName\\niksi\\${targetName ? targetName : ""}`, { "shell": "powershell.exe" })
   // TODO abort if command fails
   if (ungit) {
     const name: string = targetName ? targetName : repo.substring(repo.lastIndexOf("/"), -1)
-    cp.exec(`rm -r C:\\Users\\$ENV:UserName\\niksi\\${name}\\.git`, { "shell": "powershell.exe" })
+    // NOTE: direnv requires .git
+    // cp.exec(`rm -r C:\\Users\\$ENV:UserName\\niksi\\${name}\\.git`, { "shell": "powershell.exe" })
   }
 }
 
