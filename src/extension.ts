@@ -63,10 +63,11 @@ class NiksiPanel {
 
     if (NiksiPanel.currentPanel) {
       NiksiPanel.currentPanel._panel.reveal(column);
-      return;
     }
 
-    const panel = vscode.window.createWebviewPanel(
+    const panel = NiksiPanel.currentPanel
+      ? NiksiPanel.currentPanel._panel
+      : vscode.window.createWebviewPanel(
       NiksiPanel.viewType,
       'Niksi',
       column || vscode.ViewColumn.One,
