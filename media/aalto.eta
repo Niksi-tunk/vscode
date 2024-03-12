@@ -11,5 +11,6 @@
     <button onClick='buttonHandler("wsd", "aalto")' type="button" id="course-button">Web Software Development</button>
     <button onClick='buttonHandler("y1", "aalto")' type="button" id="course-button">Y1</button>
     <button onClick='buttonHandler("y2", "aalto")' type="button" id="course-button">Y2</button>
+    <button onClick='buttonHandler("rust", "aalto")' type="button" id="course-button">Rust</button>
   </div>
 </div>
