@@ -14,8 +14,14 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand('niksi.aalto', () => {
       NiksiPanel.createOrShow(context.extensionUri, 'aalto');
     }),
-    vscode.commands.registerCommand('niksi.import', () => {
-      importFromGit();
+    vscode.commands.registerCommand('niksi.import', async () => {
+      const repo = await vscode.window.showInputBox({
+        placeHolder: "Repository URL",
+        prompt: "Import a git repository to Niksi",
+      });
+      if (repo) {
+        await importFromGit(repo, undefined, false);
+      }
     })
   );
 
@@ -31,17 +37,13 @@ export function activate(context: vscode.ExtensionContext) {
   }
 }
 
-async function importFromGit(ungit: boolean) {
-  const repo = await vscode.window.showInputBox({
-    placeHolder: "Repository URL",
-    prompt: "Import a git repository to Niksi",
-  });
+async function importFromGit(repo: string, targetName: string | undefined, ungit: boolean) {
   vscode.window.showInformationMessage(`Cloning ${repo}`)
-  cp.exec(`git clone ${repo} C:\Users\$ENV:UserName\niksi`, { "shell": "powershell.exe" })
+  cp.exec(`git clone ${repo} C:\\Users\\$ENV:UserName\\niksi ${targetName ? targetName : ""}`, { "shell": "powershell.exe" })
   // TODO abort if command fails
   if (ungit) {
-    const name: string = repo.substring(repo.lastIndexOf("/"), -1)
-    cp.exec(`rm -r C:\Users\$ENV:UserName\niksi${name}\.git`, { "shell": "powershell.exe" })
+    const name: string = targetName ? targetName : repo.substring(repo.lastIndexOf("/"), -1)
+    cp.exec(`rm -r C:\\Users\\$ENV:UserName\\niksi\\${name}\\.git`, { "shell": "powershell.exe" })
   }
 }
 
@@ -106,15 +108,16 @@ class NiksiPanel {
     );
 
     this._panel.webview.onDidReceiveMessage(
-      message => {
+      async message => {
         switch (message.command) {
           case 'select':
             vscode.window.showInformationMessage(message.text + " chosen");
             this.launchProject(message.text);
             return;
           case 'create':
-            vscode.window.showInformationMessage("Would create project")
-            // this.createProject(JSON.parse(message.text))
+            vscode.window.showInformationMessage("Creating project")
+            const project = JSON.parse(message.text)
+            await importFromGit("https://github.com/Niksi-tunk/" + project.template, project.name, true)
             return;
         }
       },
