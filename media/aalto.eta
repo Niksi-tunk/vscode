@@ -1,15 +1,23 @@
 <% layout("./layout.eta") %>
 
 <div class="container">
-    <h1>Aalto courses</h1>
-    <div class="courses">
-        <button onClick= <button onClick=buttonHandler("p1", "aalto") type="button" id="course-button"> type="button" id="course-button">Programming 1</button>
-        <button onClick= <button onClick=buttonHandler("p2", "aalto") type="button" id="course-button"> type="button" id="course-button">Programming 2</button>
-        <button onClick= <button onClick=buttonHandler("c", "aalto") type="button" id="course-button"> type="button" id="course-button">C-Programming</button>
-        <button onClick= <button onClick=buttonHandler("ps1", "aalto") type="button" id="course-button"> type="button" id="course-button">Programming Studio 1</button>
-        <button onClick= <button onClick=buttonHandler("ps2", "aalto") type="button" id="course-button"> type="button" id="course-button">Programming Studio 2</button>
-        <button onClick= <button onClick=buttonHandler("wsd", "aalto") type="button" id="course-button"> type="button" id="course-button">Web Software Development</button>
-        <button onClick= <button onClick=buttonHandler("y1", "aalto") type="button" id="course-button"> type="button" id="course-button">Y1</button>
-        <button onClick= <button onClick=buttonHandler("y2", "aalto") type="button" id="course-button"> type="button" id="course-button">Y2</button>
-    </div>
-</div> 
+  <h1>Aalto courses</h1>
+  <div class="courses">
+    <button onClick='buttonHandler("p1", "aalto")' type="button" id="course-button"> type="button"
+      id="course-button">Programming 1</button>
+    <button onClick='buttonHandler("p2", "aalto")' type="button" id="course-button"> type="button"
+      id="course-button">Programming 2</button>
+    <button onClick='buttonHandler("c", "aalto")' type="button" id="course-button"> type="button"
+      id="course-button">C-Programming</button>
+    <button onClick='buttonHandler("ps1", "aalto")' type="button" id="course-button"> type="button"
+      id="course-button">Programming Studio 1</button>
+    <button onClick='buttonHandler("ps2", "aalto")' type="button" id="course-button"> type="button"
+      id="course-button">Programming Studio 2</button>
+    <button onClick='buttonHandler("wsd", "aalto")' type="button" id="course-button"> type="button"
+      id="course-button">Web Software Development</button>
+    <button onClick='buttonHandler("y1", "aalto")' type="button" id="course-button"> type="button"
+      id="course-button">Y1</button>
+    <button onClick='buttonHandler("y2", "aalto")' type="button" id="course-button"> type="button"
+      id="course-button">Y2</button>
+  </div>
+</div>
