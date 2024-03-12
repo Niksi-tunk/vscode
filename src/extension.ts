@@ -117,7 +117,8 @@ class NiksiPanel {
             return;
           case 'create':
             vscode.window.showInformationMessage("Creating project")
-            const project = JSON.parse(message.text)
+            let project = JSON.parse(message.text)
+            project.name = project.name.replaceAll(" ", "-")
             await importFromGit("https://github.com/Niksi-tunk/" + project.template + "-template", project.name, true)
             this.launchProject(project.name)
             return;
