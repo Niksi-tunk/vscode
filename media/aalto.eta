@@ -1,0 +1,15 @@
+<% layout("./layout.eta") %>
+
+<div class="container">
+    <h1>Aalto courses</h1>
+    <div class="courses">
+        <button onClick="" type="button" id="course-button">Programming 1</button>
+        <button onClick="" type="button" id="course-button">Programming 2</button>
+        <button onClick="" type="button" id="course-button">C-programming</button>
+        <button onClick="" type="button" id="course-button">Programming Studio 1</button>
+        <button onClick="" type="button" id="course-button">Programming Studio 2</button>
+        <button onClick="" type="button" id="course-button">Web Software Development</button>
+        <button onClick="" type="button" id="course-button">Y1</button>
+        <button onClick="" type="button" id="course-button">Y2</button>
+    </div>
+</div> 

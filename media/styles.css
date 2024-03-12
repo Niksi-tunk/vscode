@@ -33,7 +33,8 @@ h1 {
     margin-right: 2em;
 }
 
-.projects{
+.projects, 
+.courses {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -41,7 +42,8 @@ h1 {
     margin-bottom: 50px;
 }
 
-#project-button {
+#project-button,
+#course-button {
     border-radius: 30px;
     border: 2px solid #5290A5;
     width: 200px;
@@ -53,6 +55,10 @@ h1 {
 }
 
 #project-button:hover {
+    border-color: #A352A5;
+}
+
+#course-button:hover {
     border-color: #A352A5;
 }
 
