@@ -157,7 +157,7 @@ class NiksiPanel {
     vscode.window.showInformationMessage(name + " chosen");
     if (!this._getProjects(aaltoDir).includes(name)) {
       vscode.window.showInformationMessage(name + " has not yet been imported. Importing with git...");
-      importFromGit(`https://github.com/Niksi-tunk/${name}-aalto`, undefined, true, aaltoDir)
+      importFromGit(`https://github.com/Niksi-tunk/${name}-aalto`, name, true, aaltoDir)
     }
     this.launchProject(name, aaltoWSLDir)
   }
