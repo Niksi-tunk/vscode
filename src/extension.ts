@@ -134,7 +134,8 @@ class NiksiPanel {
   }
 
   private _getProjects() {
-    return fs.readdirSync(`${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi`);
+    //return fs.readdirSync(`${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi`);
+    return ["test1", "test2"]
   }
 
   private _update() {
