@@ -127,6 +127,8 @@ class NiksiPanel {
             await importFromGit("https://github.com/Niksi-tunk/" + project.template + "-template", project.name, true)
             this.launchProject(project.name)
             return;
+          case 'aalto':
+            this.getAaltoCourse(message.text)
         }
       },
       null,
@@ -152,7 +154,9 @@ class NiksiPanel {
   }
 
   getAaltoCourse(name: string) {
+    vscode.window.showInformationMessage(name + " chosen");
     if (!this._getProjects(aaltoDir).includes(name)) {
+      vscode.window.showInformationMessage(name + " has not yet been imported. Importing with git...");
       importFromGit(`https://github.com/Niksi-tunk/${name}-aalto`, undefined, true, aaltoDir)
     }
     this.launchProject(name, aaltoWSLDir)
