@@ -145,6 +145,14 @@ class NiksiPanel {
     }
   }
 
+  getAaltoCourse(course: string) {
+    const name = `aalto-${course}`
+    if (!this._getProjects().includes(name)) {
+      importFromGit(`https://github.com/Niksi-tunk/${name}`, undefined, true)
+    }
+    this.launchProject(name)
+  }
+
   private _getProjects() {
     if (process.platform == "win32") {
       return fs.readdirSync(`${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi`)
