@@ -39,7 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 async function importFromGit(repo: string, targetName: string | undefined, ungit: boolean) {
   vscode.window.showInformationMessage(`Cloning ${repo}`)
-  cp.exec(`git clone ${repo} C:\\Users\\$ENV:UserName\\niksi ${targetName ? targetName : ""}`, { "shell": "powershell.exe" })
+  cp.exec(`git clone ${repo} C:\\Users\\$ENV:UserName\\niksi\\${targetName ? targetName : ""}`, { "shell": "powershell.exe" })
   // TODO abort if command fails
   if (ungit) {
     const name: string = targetName ? targetName : repo.substring(repo.lastIndexOf("/"), -1)
@@ -117,7 +117,8 @@ class NiksiPanel {
           case 'create':
             vscode.window.showInformationMessage("Creating project")
             const project = JSON.parse(message.text)
-            await importFromGit("https://github.com/Niksi-tunk/" + project.template, project.name, true)
+            await importFromGit("https://github.com/Niksi-tunk/" + project.template + "-template", project.name, true)
+            this.launchProject(project.name)
             return;
         }
       },
