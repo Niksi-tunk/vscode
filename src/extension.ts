@@ -37,10 +37,10 @@ export function activate(context: vscode.ExtensionContext) {
   }
 }
 
-const projectDir: string = "{process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi"
-const projectWSLDir: string = "/mnt/c/${process.env.HOMEPATH}/niksi"
-const aaltoDir: string = "{process.env.HOMEDRIVE}${process.env.HOMEPATH}\\aalto"
-const aaltoWSLDir: string = "/mnt/c/${process.env.HOMEPATH}/aalto"
+const projectDir: string = `${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi`
+const projectWSLDir: string = `/mnt/c/${process.env.HOMEPATH}/niksi`
+const aaltoDir: string = `${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\aalto`
+const aaltoWSLDir: string = `/mnt/c/${process.env.HOMEPATH}/aalto`
 
 async function importFromGit(repo: string, targetName: string | undefined, ungit: boolean, targetDir: string = projectDir) {
   vscode.window.showInformationMessage(`Cloning ${repo}`)
