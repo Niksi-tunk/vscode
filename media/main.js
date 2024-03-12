@@ -3,9 +3,9 @@
 
 const vscode = acquireVsCodeApi();
 
-function buttonHandler(project) {
+function buttonHandler(project, action = 'select') {
     vscode.postMessage({
-        command: 'select',
+        command: action,
         text: project,
     });
 }

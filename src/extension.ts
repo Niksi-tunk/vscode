@@ -37,9 +37,14 @@ export function activate(context: vscode.ExtensionContext) {
   }
 }
 
-async function importFromGit(repo: string, targetName: string | undefined, ungit: boolean) {
+const projectDir: string = "C:\\Users\\$ENV:UserName\\niksi"
+const projectWSLDir: string = "/mnt/c/Users/\$ENV:UserName/niksi"
+const aaltoDir: string = "C:\\Users\\$ENV:UserName\\aalto"
+const aaltoWSLDir: string = "/mnt/c/Users/\$ENV:UserName/aalto"
+
+async function importFromGit(repo: string, targetName: string | undefined, ungit: boolean, targetDir: string = projectDir) {
   vscode.window.showInformationMessage(`Cloning ${repo}`)
-  cp.execSync(`git clone ${repo} C:\\Users\\$ENV:UserName\\niksi\\${targetName ? targetName : ""}`, { "shell": "powershell.exe" })
+  cp.execSync(`git clone ${repo} ${targetDir}\\${targetName ? targetName : ""}`, { "shell": "powershell.exe" })
   // TODO abort if command fails
   if (ungit) {
     const name: string = targetName ? targetName : repo.substring(repo.lastIndexOf("/"), -1)
@@ -129,8 +134,8 @@ class NiksiPanel {
     );
   }
 
-  public launchProject(name: string) {
-    cp.exec(`code --remote wsl+nixos "/mnt/c/Users/\$ENV:UserName/niksi/${name}"`, { "shell": "powershell.exe" })
+  public launchProject(name: string, dir: string = projectWSLDir) {
+    cp.exec(`code --remote wsl+nixos "${dir}/${name}"`, { "shell": "powershell.exe" })
   }
 
   public dispose() {
@@ -146,18 +151,20 @@ class NiksiPanel {
     }
   }
 
-  getAaltoCourse(course: string) {
-    const name = `aalto-${course}`
-    if (!this._getProjects().includes(name)) {
-      importFromGit(`https://github.com/Niksi-tunk/${name}`, undefined, true)
+  getAaltoCourse(name: string) {
+    if (!this._getProjects(aaltoDir).includes(name)) {
+      importFromGit(`https://github.com/Niksi-tunk/${name}-aalto`, undefined, true, aaltoDir)
     }
-    this.launchProject(name)
+    this.launchProject(name, aaltoWSLDir)
   }
 
-  private _getProjects() {
+  private _getProjects(dir: string = projectDir) {
     if (process.platform == "win32") {
-      return fs.readdirSync(`${process.env.HOMEDRIVE}${process.env.HOMEPATH}\\niksi`)
-    } else { return ["test1", "test2"] }
+      return fs.readdirSync(`${dir}\\niksi`)
+    } else {
+      // For testing only
+      return ["test1", "test2"]
+    }
   }
 
   private _update() {
