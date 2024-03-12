@@ -31,12 +31,18 @@ export function activate(context: vscode.ExtensionContext) {
   }
 }
 
-async function importFromGit() {
+async function importFromGit(ungit: boolean) {
   const repo = await vscode.window.showInputBox({
     placeHolder: "Repository URL",
     prompt: "Import a git repository to Niksi",
   });
   vscode.window.showInformationMessage(`Cloning ${repo}`)
+  cp.exec(`git clone ${repo} C:\Users\$ENV:UserName\niksi`, { "shell": "powershell.exe" })
+  // TODO abort if command fails
+  if (ungit) {
+    const name: string = repo.substring(repo.lastIndexOf("/"), -1)
+    cp.exec(`rm -r C:\Users\$ENV:UserName\niksi${name}\.git`, { "shell": "powershell.exe" })
+  }
 }
 
 function getWebviewOptions(extensionUri: vscode.Uri): vscode.WebviewOptions {
