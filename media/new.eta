@@ -1,14 +1,14 @@
 <% layout("./layout.eta") %>
 
-<form onSubmit="return false;">
+<form onSubmit="return false;" class="flex pl-8">
         <div class="form-content">
         <h2>Create new project...</h2>
-            <div class="form-column1">
+            <div class="flex flex-col font-normal font-sans text-xl h-[50vh] mt-4 mb-20">
                 <label for="name">Project name</label>
-                <input type="text" id="name" />
+                <input type="text" id="name" placeholder="Project name" class="input input-bordered input-primary w-full max-w-xs" />
 
                 <label for="template">Choose language</label>
-                <select name="template" id="template">
+                <select name="template" id="template" class="select select-primary w-full max-w-xs">
                     <option value="scala3">Scala 3</option>
                     <option value="rust">Rust</option>
                     <option value="python">Python</option>
@@ -21,7 +21,7 @@
                 </select>
             </div>
         </div>
-            <div class="form-column2">
-                <input onClick="createNew()" type="submit" id="submit" value="Create" />
+            <div class="flex flex-col pt-96">
+                <input type="submit" id="submit" value="Create" class="input input-bordered input-primary w-full max-w-xs" />
             </div>
 </form>

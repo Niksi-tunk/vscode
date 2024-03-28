@@ -1,6 +1,6 @@
 <% layout("./layout.eta") %>
 
-<div class="container">
+<div class="mx-8">
     <h1>My projects</h1>
     <div class="projects">
     <% it.projects.forEach(p => { %>

@@ -1,6 +1,6 @@
 <% layout("./layout.eta") %>
 
-<div class="container">
+<div class="mx-8">
   <h1>Aalto courses</h1>
   <div class="courses">
     <button onClick='buttonHandler("p1", "aalto")' type="button" id="course-button">Programming 1</button>
