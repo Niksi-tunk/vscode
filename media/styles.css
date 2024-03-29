@@ -5,7 +5,7 @@
 @layer components {
     #course-button,
     #project-button {
-      @apply btn rounded px-16 pt-8 pb-16 m-2 border-b-8 border-l-4 bg-blue-700 hover:bg-blue-800 border-blue-800 hover:border-blue-900 text-white hover:text-slate-300 text-3xl font-mono;
+      @apply btn rounded m-2 w-72 h-32 border-b-8 border-l-4 bg-blue-700 hover:bg-blue-800 border-blue-800 hover:border-blue-900 text-white hover:text-slate-300 text-3xl font-mono;
     }
 
     .container {
