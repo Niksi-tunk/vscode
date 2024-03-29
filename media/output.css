@@ -1260,6 +1260,8 @@ html {
 #course-button,
     #project-button {
   margin: 0.5rem;
+  height: 8rem;
+  width: 18rem;
   border-radius: 0.25rem;
   border-bottom-width: 8px;
   border-left-width: 4px;
@@ -1267,10 +1269,6 @@ html {
   border-color: rgb(30 64 175 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-  padding-left: 4rem;
-  padding-right: 4rem;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1.875rem;
   line-height: 2.25rem;
