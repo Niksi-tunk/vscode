@@ -1,12 +1,12 @@
 <% layout("./layout.eta") %>
 
-<div class="mx-8 prose">
-    <h1 class="text-[48px] text-center">My projects</h1>
-    <div class="projects">
-    <% it.projects.forEach(p => { %>
-        <button onClick=buttonHandler("<%~ p %>") type="button" id="project-button">
-            <%= p %>
-        </button>
-    <% }) %>
-    </div>
-</div> 
+<div class="prose p-4 text-center min-w-full">
+  <h1 class="text-[48px]">My projects</h1>
+</div>
+<div class="projects">
+	<% it.projects.forEach(p => { %>
+			<button onClick=buttonHandler("<%~ p %>") type="button" id="project-button">
+					<%= p %>
+			</button>
+	<% }) %>
+</div>

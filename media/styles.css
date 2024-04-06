@@ -14,6 +14,6 @@
 
     .projects, 
     .courses {
-        @apply flex flex-wrap justify-center gap-8 mb-48
+        @apply flex flex-wrap justify-center gap-2
     }
 }

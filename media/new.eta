@@ -1,27 +1,27 @@
 <% layout("./layout.eta") %>
 
-<form onSubmit="return false;" class="flex pl-8">
-        <div class="form-content prose">
-        <h2 class="text-[36px] text-center">Create new project...</h2>
-            <div class="flex flex-col font-normal font-sans text-xl h-[50vh] mt-4 mb-20">
-                <label for="name">Project name</label>
-                <input type="text" id="name" placeholder="Project name" class="input input-bordered input-primary w-full max-w-xs" />
+<div class="prose p-4 min-w-full">
+  <h1 class="text-[48px]">Create new project...</h1>
+</div>
 
-                <label for="template">Choose language</label>
-                <select name="template" id="template" class="select select-primary w-full max-w-xs">
-                    <option value="scala3">Scala 3</option>
-                    <option value="rust">Rust</option>
-                    <option value="python">Python</option>
-                    <option value="c">C</option>
-                    <option value="cpp">C++</option>
-                    <option value="haskell">Haskell</option>
-                    <option value="idris2">Idris 2</option>
-                    <option value="node">Node.js</option>
-                    <option value="none">Empty template</option>
-                </select>
-            </div>
-        </div>
-            <div class="flex flex-col pt-96">
-                <input type="submit" id="submit" value="Create" class="input input-bordered input-primary w-full max-w-xs" />
-            </div>
+<form onSubmit="return false;" class="flex pl-4">
+  <div class="flex flex-col leading-relaxed">
+    <label for="name" class="label font-semibold">Project name</label>
+    <input type="text" id="name" placeholder="Project name" class="input input-primary">
+    <label for="template" class="label font-semibold">Choose language</label>
+    <select name="template" id="template" class="select select-primary">
+      <option value="scala3">Scala 3</option>
+      <option value="rust">Rust</option>
+      <option value="python">Python</option>
+      <option value="c">C</option>
+      <option value="cpp">C++</option>
+      <option value="haskell">Haskell</option>
+      <option value="idris2">Idris 2</option>
+      <option value="node">Node.js</option>
+      <option value="none">Empty template</option>
+    </select>
+  </div>
+  <div class="flex flex-col pl-12 justify-end">
+    <input onClick="createNew()" type="submit" id="submit" value="Create" class="btn btn-primary w-full" />
+  </div>
 </form>

@@ -6,7 +6,7 @@
     <link href="<%= it.stylesheet %>" rel="stylesheet">
     <title>Niksi</title>
 </head>
-<body>
+<body data-theme"mytheme">
     <%~ it.body %>
     <script src="<%= it.script %>"></script>
 </body>

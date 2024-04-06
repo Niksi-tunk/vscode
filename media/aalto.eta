@@ -1,16 +1,16 @@
 <% layout("./layout.eta") %>
 
-<div class="mx-8 prose">
-  <h1 class="text-[48px] text-center">Aalto courses</h1>
-  <div class="courses">
-    <button onClick='buttonHandler("p1", "aalto")' type="button" id="course-button">Programming 1</button>
-    <button onClick='buttonHandler("p2", "aalto")' type="button" id="course-button">Programming 2</button>
-    <button onClick='buttonHandler("rust", "aalto")' type="button" id="course-button">Rust</button>
-    <button onClick='buttonHandler("c", "aalto")' type="button" id="course-button">C-Programming</button>
-    <button onClick='buttonHandler("ps1", "aalto")' type="button" id="course-button">Programming Studio 1</button>
-    <button onClick='buttonHandler("ps2", "aalto")' type="button" id="course-button">Programming Studio 2</button>
-    <button onClick='buttonHandler("wsd", "aalto")' type="button" id="course-button">Web Software Development</button>
-    <button onClick='buttonHandler("y1", "aalto")' type="button" id="course-button">Y1</button>
-    <button onClick='buttonHandler("y2", "aalto")' type="button" id="course-button">Y2</button>
-  </div>
+<div class="prose p-4 text-center min-w-full">
+  <h1 class="text-[48px]">Aalto courses</h1>
+</div>
+<div class="courses">
+  <button onClick='buttonHandler("p1", "aalto")' type="button" id="course-button">Programming 1</button>
+  <button onClick='buttonHandler("p2", "aalto")' type="button" id="course-button">Programming 2</button>
+  <button onClick='buttonHandler("rust", "aalto")' type="button" id="course-button">Rust</button>
+  <button onClick='buttonHandler("c", "aalto")' type="button" id="course-button">C-Programming</button>
+  <button onClick='buttonHandler("ps1", "aalto")' type="button" id="course-button">Programming Studio 1</button>
+  <button onClick='buttonHandler("ps2", "aalto")' type="button" id="course-button">Programming Studio 2</button>
+  <button onClick='buttonHandler("wsd", "aalto")' type="button" id="course-button">Web Software Development</button>
+  <button onClick='buttonHandler("y1", "aalto")' type="button" id="course-button">Y1</button>
+  <button onClick='buttonHandler("y2", "aalto")' type="button" id="course-button">Y2</button>
 </div>
