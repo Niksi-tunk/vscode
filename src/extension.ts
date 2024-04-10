@@ -181,7 +181,7 @@ class NiksiPanel {
     const scriptPathOnDisk = vscode.Uri.joinPath(this._extensionUri, 'media', 'main.js');
     const script = webview.asWebviewUri(scriptPathOnDisk);
 
-    const stylesheetOnDisk = vscode.Uri.joinPath(this._extensionUri, 'media', 'styles.css');
+    const stylesheetOnDisk = vscode.Uri.joinPath(this._extensionUri, 'media', 'output.css');
     const stylesheet = webview.asWebviewUri(stylesheetOnDisk)
 
     const templatePath = vscode.Uri.joinPath(this._extensionUri, 'media');
